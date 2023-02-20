@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    max-height: 3rem;
+}
+
+@media screen and (min-width: 2560px) {
+    .logo {
+        max-height: 5rem;
+    }
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+@media screen and (min-width: 825px) {
+    .nav-bar {
+        position: absolute;
+        right: 0;
+        margin: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav div div ul li {
+        border: 1px solid black;
+        border-radius: 8px;
+        margin: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    li a {
+        border-radius: 8px;
+        background-color: pink;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    li a[href="#"] {
+        border-radius: 8px;
+        background-color: #d90368;
+    }
+}
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid black;
+}
+@media screen and (max-width: 769px){
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+
+    }
+}
+
+.social{
+    color: rgba(255, 255, 255, 1);
+    background-color: #d90368;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background-color: d90368;
+    margin: 1rem;
+    border: 1px solid black;
+}
+@media screen and (min-width:768px){
+    .social{
+    font-size: 1.5rem;
+    background-color: #d90368;
+    margin: 1rem;
+}
+}
+.social-icon{
+    border-radius: 50%;
+    margin: .5rem .7rem;
+    text-align: center
+}
