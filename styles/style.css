@@ -6,7 +6,13 @@
 
 main {
     width: 100%;
-    height: 100%;
+    height: 90vh;
+    background-image: linear-gradient(
+        150deg,
+        #d9036899,
+        #f0f0f0,
+        #d9036899
+    );
 }
 
 img {
@@ -95,4 +101,12 @@ footer {
     border-radius: 50%;
     margin: .5rem .7rem;
     text-align: center
+}
+
+.form-contact{
+    display: flex;
+    
+    width: 40%;
+    height: 80%;
+    background-color: #ffffff;
 }
