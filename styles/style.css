@@ -2,12 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
     width: 100%;
-    height: 100vh;
-    min-height: auto;
+    height: auto;
+
 
     background-image: linear-gradient(150deg,
             #d9036899,
@@ -21,7 +22,7 @@ main {
     flex-direction: column;
     margin: auto;
     width: 100%;
-    height: 100%;
+    min-height: 84vh;
     background-color: #ffffff;
 
 }
@@ -30,7 +31,6 @@ main {
     main {
         margin: auto;
         width: 80%;
-        height: 90vh;
         background-color: #ffffff;
     }
 }
@@ -53,7 +53,7 @@ img {
     }
 }
 
-nav {
+body > nav {
     border-bottom: 1px solid black;
 }
 
@@ -77,6 +77,9 @@ nav {
     li a {
         border-radius: 8px;
         background-color: pink;
+    }
+    li a:hover{
+        box-shadow: 1px 1px .3rem black;
     }
 }
 
@@ -107,7 +110,6 @@ footer {
     background-color: #d90368;
     font-size: 1.5rem;
     border-radius: 50%;
-    background-color: #d90368;
     margin: 1rem;
     border: 1px solid black;
 }
@@ -134,6 +136,7 @@ footer {
         border-radius: 8px;
         gap: 2rem;
         max-width: 50%;
+        padding: 5rem;
     }
 }
 
@@ -170,8 +173,6 @@ footer {
 .form-main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    gap: 1rem;
 
 }
 
@@ -179,20 +180,33 @@ footer {
     .form-main {
         display: flex;
         flex-direction: row;
-        gap: 3rem;
 
     }
 }
+.group-list{
+    display: flex;
+    flex-direction: column;
 
+}
+@media screen and (min-width: 768px) {
+    .group-list{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        
+    }
+}
 .form-check {
     display: flex;
     position: relative;
-    margin: .5rem;
 }
 
 @media screen and (min-width: 768px) {
     .form-check {
-        margin: 1.5rem;
+        margin: 0 1.5rem;
     }
 }
 
@@ -202,11 +216,10 @@ footer {
 
 .fa-search {
     border-radius: 50%;
-    background-color: #d90368;
-
 }
 
-.form-check-input:hover {
+.form-check-input:hover,
+.form-check-input:focus {
     border-color: #d90368;
     box-shadow: 0 0 0 0.2rem rgba(217, 3, 103, 0.25);
 }
@@ -214,17 +227,7 @@ footer {
 .form-search {
     display: flex;
     max-width: 15rem;
-
-}
-
-@media screen and (min-width: 768px) {
-    .form-search {
-        display: flex;
-        margin: 1rem;
-        max-width: 15rem;
-        right: 10%;
-        position: absolute;
-    }
+    align-self: start;
 }
 
 /*cards*/
@@ -232,20 +235,23 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:1rem;
-    overflow: hidden;
+    gap: 1rem;
+
     margin: 2rem 5rem;
-    
+
 }
+
 @media screen and (min-width:768px) {
     .cards {
         display: flex;
+        flex-direction: row;
         justify-content: start;
         flex-wrap: wrap;
         gap: 7rem;
         margin: 10rem 2rem;
     }
 }
+
 .card {
     display: flex;
     flex-direction: column;
@@ -253,9 +259,87 @@ footer {
     justify-content: center;
     width: 16rem;
 }
-.see-more{
+
+.card-img-top {
+    object-fit: cover;
+    height: 10rem;
+}
+
+.see-more {
     display: flex;
     flex-direction: row;
     gap: 5rem;
     margin: 1rem;
+}
+
+.img-carrousel {
+    object-fit: cover;
+    height: 15rem;
+
+}
+.table, td, th{
+    border: 1px solid black;
+}
+
+@media screen and (min-width:768px) {
+    .table {
+        margin: 2rem 0 0 0;
+        width: 60%;
+    }
+}
+.tr-bg{
+    background-color: pink;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    gap:4rem;
+    min-height: 30rem;
+    
+}
+@media screen and (min-width:768px) {
+    .details{
+        flex-direction: row;
+        border: 1px solid black;
+        width: 60%;
+        min-height: 30rem;
+        
+    }
+}
+.details-figure{
+    margin: 0 1rem;
+    border: 1px solid black;
+    box-shadow: -1px -1px .3rem black;
+}
+@media screen and (min-width:768px) {
+    .details-figure{
+        margin: 0 0 0 5%;
+        width: 50rem;
+        height: 20rem;
+        border: 1px solid black;
+        box-shadow: -2px -2px 1rem black;
+    }
+}
+.details-img{
+    object-fit: cover;
+}
+.details-info{
+    text-align: center;
+    width: 90%;
+}
+@media screen and (min-width:768px) {
+    .details-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 50rem;
+        height: 20rem;
+        margin: 0 5% 0 0;
+        border: 1px solid black;
+    }
 }
