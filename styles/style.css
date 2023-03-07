@@ -69,7 +69,8 @@ body > nav {
     nav div div ul li {
         border: 1px solid black;
         border-radius: 8px;
-        margin: 1rem;
+        margin: auto 1rem;
+        text-align: center;
     }
 }
 
@@ -223,7 +224,10 @@ footer {
     border-color: #d90368;
     box-shadow: 0 0 0 0.2rem rgba(217, 3, 103, 0.25);
 }
-
+.form-check-input:checked {
+    background-color: #d90368;
+    border-color: #d90368;
+}
 .form-search {
     display: flex;
     max-width: 15rem;
@@ -245,10 +249,10 @@ footer {
     .cards {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: start;
         flex-wrap: wrap;
         gap: 7rem;
-        margin: 10rem 2rem;
+        margin: 2rem 2rem;
     }
 }
 
@@ -265,11 +269,14 @@ footer {
     height: 10rem;
 }
 
+.card-body{
+     height: 8rem;
+}
 .see-more {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
-    margin: 1rem;
+    gap:1rem 4rem;
+    padding: 2rem 0 1rem;
 }
 
 .img-carrousel {
