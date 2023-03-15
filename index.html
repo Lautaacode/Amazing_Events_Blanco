@@ -9,12 +9,12 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="./images/favicon.ico">
     <title>Home</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
         <div class="container-fluid d-flex">
             <a class="navbar-brand" href="#">
                 <img src="./images/logo_amazing_events.png" alt="Logo" class="d-inline-block logo">
@@ -70,32 +70,10 @@
         </div>
         <nav class="navbar ">
             <form class="container-fluid">
-                <ul class="group-list group-list">
-                    <li class="list-group-item form-check">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched">
-                        <label class="form-check-label stretched-link" for="firstCheckboxStretched">Category</label>
-                    </li>
-                    <li class="list-group-item form-check">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched">
-                        <label class="form-check-label stretched-link" for="secondCheckboxStretched">Category</label>
-                    </li>
-                    <li class="list-group-item form-check">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched">
-                        <label class="form-check-label stretched-link" for="thirdCheckboxStretched">Category</label>
-                    </li>
-                    <li class="list-group-item form-check">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="fourthCheckboxStretched">
-                        <label class="form-check-label stretched-link" for="fourthCheckboxStretched">Category</label>
-                    </li>
-                    <li class="list-group-item form-check">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="fifthCheckboxStretched">
-                        <label class="form-check-label stretched-link" for="fifthCheckboxStretched">Category</label>
-                    </li>
+                <ul id="cat" class="group-list">
                 </ul>
                 <div class="form-search">
-                    <input class="form-control mx-1" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-pink rounded-circle" type="submit"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
+                    <input class="form-control mx-1" type="search" id="search" placeholder="Search" aria-label="Search">
                 </div>
             </form>
         </nav>
@@ -114,7 +92,7 @@
         </a>
     </footer>
         <script src="./scripts/data.js"></script>
-        <script src="./scripts/funcion.js"></script>
+        <script src="./scripts/function.js"></script>
         <script src="./scripts/index.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
