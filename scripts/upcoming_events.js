@@ -43,7 +43,7 @@ function deleteDuplicate(array){
 };
 //filtros categorias y busqueda
 function searchBar(eventos){
-    let eventFilter = eventos.filter((event) => event.name.toLowerCase().includes(search.value));
+    let eventFilter = eventos.filter((event) => event.name.toLowerCase().includes(search.value.toLowerCase()));
         return eventFilter
 }
 

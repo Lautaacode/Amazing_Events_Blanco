@@ -25,7 +25,7 @@ function printCards(events) {
 }
 //filtro de tarjetas
 function filterUpcomingEvents(events, fechaActual){
-    let upcomingEvents = events.filter((event) => event.date<fechaActual)
+    let upcomingEvents = events.filter((event) => event.date < fechaActual)
     return upcomingEvents
 }
 
@@ -43,7 +43,7 @@ function deleteDuplicate(array){
 };
 //filtros categorias y busqueda
 function searchBar(eventos){
-    let eventFilter = eventos.filter((event) => event.name.toLowerCase().includes(search.value));
+    let eventFilter = eventos.filter((event) => event.name.toLowerCase().includes(search.value.toLowerCase()));
         return eventFilter
 }
 
@@ -63,6 +63,7 @@ function showCategories(categorias) {
 function filterByCategory(events){
     let checkboxes = document.querySelectorAll("input[type='checkbox']")
     let arrayChecks = Array.from(checkboxes)
+    console.log(arrayChecks)
     let arrayChecksChecked = arrayChecks.filter(check => check.checked)
     let arrayChecksCheckedValues = arrayChecksChecked.map(checkChecked => checkChecked.value)
     let eventosFiltrado = events.filter(evento => arrayChecksCheckedValues.includes(evento.category))
