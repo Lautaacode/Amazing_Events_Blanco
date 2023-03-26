@@ -2,11 +2,29 @@ const homeEvents = document.getElementById('cards_index')
 const search = document.getElementById('search');
 const categoryEvents = document.getElementById('cat')
 
-//tarjertas
-function printCards(events) {
+
+
+async function getEvents() {
+    data = await fetch("https://mindhub-xj03.onrender.com/api/amazing")
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+    return data
+}
+
+async function getArray() {
+    let arrayEvents = await getEvents()
+    getCards(arrayEvents.events)
+    getCategories(deleteDuplicate(filterCategories(arrayEvents.events)))
+}
+
+getArray()
+
+function getCards(events) {
     let cards = ''
-    if(events.length == 0){
-        cards = `<h2 class="display-1 fw-bolder">No hay coincidencias</h2>`
+    if (events.length == 0) {
+        cards = `<h2 class="display-1 fw-bolder">Not found</h2>`
     }
     events.forEach(card => {
         cards += `<div class="card">
@@ -23,27 +41,27 @@ function printCards(events) {
     });
     homeEvents.innerHTML = cards
 }
-//categorias 
-function filterCategories(eventos){
-    let categorias = eventos.map((event) => event.category)
-    return categorias
+
+function filterCategories(eventos) {
+    let categories = eventos.map((event) => event.category)
+    return categories
 }
 
-function deleteDuplicate(array){
-    arrayCategories=array.filter((element,index) => array.indexOf(element) == index)
+function deleteDuplicate(array) {
+    arrayCategories = array.filter((element, index) => array.indexOf(element) == index)
     return arrayCategories
-};
-//filtros categorias y busqueda
-function searchBar(eventos){
-    let eventFilter = eventos.filter((event) => event.name.toLowerCase().includes(search.value.toLowerCase()));
-        return eventFilter
 }
 
-function showCategories(categorias) {
+function searchBar(events) {
+    let eventFilter = events.filter((event) => event.name.toLowerCase().includes(search.value.toLowerCase()));
+    return eventFilter
+}
+
+function getCategories(categorias) {
     let categories = ``
-    categorias.forEach(category=> {
-        categories  +=
-                `<li class="list-group-item form-check">
+    categorias.forEach(category => {
+        categories +=
+            `<li class="list-group-item form-check">
                 <input class="form-check-input me-1" type="checkbox" value="${category}" id="${category}">
                     <label class="form-check-label stretched-link" for="${category}">${category}
                     </label>
@@ -52,26 +70,23 @@ function showCategories(categorias) {
     categoryEvents.innerHTML = categories
 }
 
-function filterByCategory(events){
+function filterByCategory(events) {
     let checkboxes = document.querySelectorAll("input[type='checkbox']")
     let arrayChecks = Array.from(checkboxes)
     let arrayChecksChecked = arrayChecks.filter(check => check.checked)
     let arrayChecksCheckedValues = arrayChecksChecked.map(checkChecked => checkChecked.value)
     let eventosFiltrado = events.filter(evento => arrayChecksCheckedValues.includes(evento.category))
-    if(arrayChecksChecked.length > 0){
+    if (arrayChecksChecked.length > 0) {
         return eventosFiltrado
     }
     return events
 }
 
-function superFilter(){
+function superFilter() {
     let firstFilter = searchBar(data.events)
     let secondFilter = filterByCategory(firstFilter)
-    printCards(secondFilter)
+    getCards(secondFilter)
 }
 
-//llamados a funciones
-printCards(data.events)
-showCategories(deleteDuplicate(filterCategories(data.events)))
-search.addEventListener('input',superFilter)
-categoryEvents.addEventListener('change',superFilter)
+search.addEventListener('input', superFilter)
+categoryEvents.addEventListener('change', superFilter)
