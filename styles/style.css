@@ -2,12 +2,40 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+
+
+    background-image: linear-gradient(150deg,
+            #d9036899,
+            #f0f0f0,
+            #d9036899);
+    background-repeat: no-repeat;
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     width: 100%;
-    height: 100%;
+    min-height: 84vh;
+    background-color: #ffffff;
+
 }
+
+@media screen and (min-width: 768px) {
+    main {
+        margin: auto;
+        width: 80%;
+        background-color: #ffffff;
+    }
+}
+
+
 
 img {
     object-fit: contain;
@@ -25,7 +53,7 @@ img {
     }
 }
 
-nav {
+body > nav {
     border-bottom: 1px solid black;
 }
 
@@ -33,7 +61,7 @@ nav {
     .nav-bar {
         position: absolute;
         right: 0;
-        margin: 2rem;
+        margin: 1rem 0;
     }
 }
 
@@ -41,7 +69,8 @@ nav {
     nav div div ul li {
         border: 1px solid black;
         border-radius: 8px;
-        margin: 1rem;
+        margin: auto 1rem;
+        text-align: center;
     }
 }
 
@@ -49,6 +78,9 @@ nav {
     li a {
         border-radius: 8px;
         background-color: pink;
+    }
+    li a:hover{
+        box-shadow: 1px 1px .3rem black;
     }
 }
 
@@ -58,41 +90,277 @@ nav {
         background-color: #d90368;
     }
 }
+
 footer {
     display: flex;
-    position: absolute;
+    position: relative;
     bottom: 0;
     border-top: 1px solid black;
 }
-@media screen and (max-width: 769px){
+
+@media screen and (max-width: 769px) {
     footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        position: absolute;
-        bottom: 0;
-
     }
 }
 
-.social{
+.social {
     color: rgba(255, 255, 255, 1);
     background-color: #d90368;
     font-size: 1.5rem;
     border-radius: 50%;
-    background-color: d90368;
     margin: 1rem;
     border: 1px solid black;
 }
-@media screen and (min-width:768px){
-    .social{
-    font-size: 1.5rem;
-    background-color: #d90368;
-    margin: 1rem;
-}
-}
-.social-icon{
+
+.social-icon {
     border-radius: 50%;
     margin: .5rem .7rem;
     text-align: center
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 65%;
+    gap: 2rem;
+}
+
+@media screen and (min-width:768px) {
+    .form-contact {
+        border: 1px solid black;
+        border-radius: 8px;
+        gap: 2rem;
+        max-width: 50%;
+        padding: 5rem;
+    }
+}
+
+.textarea {
+    width: 110%;
+    height: 4em;
+    overflow: hidden;
+    resize: none;
+}
+
+.form-control {
+    border: 1px solid black;
+}
+
+.form-control:focus {
+    border-color: #d90368;
+    box-shadow: 0 0 0 0.2rem rgba(217, 3, 103, 0.25);
+}
+
+.btn {
+    border: 1px solid black;
+}
+
+.btn-pink {
+    background-color: #d90368;
+}
+
+.btn-pink:hover {
+    border: 1px solid black;
+    transition: 1sg;
+    background-color: #d90368;
+}
+
+.form-main {
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media screen and (min-width: 768px) {
+    .form-main {
+        display: flex;
+        flex-direction: row;
+
+    }
+}
+#cat{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.group-list{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 1050px) {
+    #cat{
+        flex-direction: row;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .group-list{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        
+    }
+}
+.form-check {
+    display: flex;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .form-check {
+        display: flex;
+        margin: 0 1.5rem;
+
+    }
+}
+
+.form-check-input {
+    border: 1px solid black;
+}
+
+.fa-search {
+    border-radius: 50%;
+}
+
+.form-check-input:hover,
+.form-check-input:focus {
+    border-color: #d90368;
+    box-shadow: 0 0 0 0.2rem rgba(217, 3, 103, 0.25);
+}
+.form-check-input:checked {
+    background-color: #d90368;
+    border-color: #d90368;
+}
+.form-search {
+    display: flex;
+    max-width: 15rem;
+    align-self: start;
+}
+
+/*cards*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 5rem;
+
+}
+
+@media screen and (min-width:769px) {
+    .cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 7rem;
+        margin: 2rem 2rem;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 16rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 10rem;
+}
+
+.card-body{
+     height: 8rem;
+}
+.see-more {
+    display: flex;
+    flex-direction: row;
+    gap:1rem 4rem;
+    padding: 2rem 0 1rem;
+}
+
+.img-carrousel {
+    object-fit: cover;
+    height: 15rem;
+
+}
+.table, td, th{
+    border: 1px solid black;
+}
+
+@media screen and (min-width:768px) {
+    .table {
+        margin: 2rem 0 0 0;
+        width: 60%;
+    }
+}
+.tr-bg{
+    background-color: pink;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:4rem;
+    min-height: 30rem;
+    
+}
+@media screen and (min-width:768px) {
+    .details{
+        flex-direction: row;
+        border: 1px solid black;
+        width: 60%;
+        min-height: 30rem;
+        
+    }
+}
+.details-figure{
+    margin: 0 1rem;
+    border: 1px solid black;
+    box-shadow: -1px -1px .3rem black;
+}
+@media screen and (min-width:768px) {
+    .details-figure{
+        margin: 0 0 0 5%;
+        width: 50rem;
+        height: 20rem;
+        border: 1px solid black;
+        box-shadow: -2px -2px 1rem black;
+    }
+}
+.details-img{
+    object-fit: cover;
+}
+.details-info{
+    text-align: center;
+    width: 90%;
+}
+@media screen and (min-width:768px) {
+    .details-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 50rem;
+        height: 20rem;
+        margin: 0 5% 0 0;
+        border: 1px solid black;
+    }
+}
+.filter{
+    display: none;
 }

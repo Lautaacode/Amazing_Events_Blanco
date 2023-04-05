@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Home</title>
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <title>Past Events</title>
 </head>
 
 <body>
     <header>
 
     </header>
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./index.html">
                 <img src="./images/logo_amazing_events.png" alt="Logo" class="d-inline-block logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -37,10 +38,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Past Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./contact.html">contact</a>
+                        <a class="nav-link" href="./contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./stats.html">stats</a>
+                        <a class="nav-link" href="./stats.html">Stats</a>
                     </li>
 
                 </ul>
@@ -49,32 +50,58 @@
         </div>
     </nav>
 
-    <main class="">
-
-
-
-
-
+    <main>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/cinema.jpg" class="img-carrousel" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/food_fair.jpg" class="img-carrousel" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/marathon.jpg" class="img-carrousel" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <nav class="navbar ">
+            <form class="container-fluid">
+                <ul class="group-list " id="cat"> 
+                </ul>
+                <div class="form-search">
+                    <input class="form-control mx-1" type="search" placeholder="Search" aria-label="Search" id="search">
+                </div>
+            </form>
+        </nav>
+        <div id="cards_past_events" class="cards">
+        </div>
     </main>
-    <footer class="container-fluid bg-body-tertiary">   
-        <a class="social" href="https://www.instagram.com">
+    <footer class="container-fluid bg-body-tertiary">
+        <a class="social" href="https://www.instagram.com" target="_blank">
             <i class="fa fa-instagram social-icon" aria-hidden="true"></i>
         </a>
-        <a class="social" href="https://www.facebook.com">
+        <a class="social" href="https://www.facebook.com" target="_blank">
             <i class="fa fa-facebook-official social-icon" aria-hidden="true"></i>
         </a>
-        <a class="social" href="https://www.whatsapp.com">
+        <a class="social" href="https://www.whatsapp.com" target="_blank">
             <i class="fa fa-whatsapp social-icon" aria-hidden="true"></i>
         </a>
     </footer>
+    <script src="./scripts/past_events.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
 </body>
 
